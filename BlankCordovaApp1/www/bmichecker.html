@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Glow Fitness</title>
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/jquery.validate.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+    <script type="text/javascript" src="scripts/profile.js"></script>
+
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="fitnessCtrl" class="container">
+        <table class="mainTable" ng-show="false">
+            <tr align="center" height="15%">
+                <td>
+                    <div>
+                        <label class="underlineLabel">BMI-Checker</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="mainTable">
+                        <tr>
+                            <td>
+                                Height :
+                            </td>
+                            <td>
+                                <input ng-model="height" placeholder="in cm" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Weight :
+                            </td>
+                            <td>
+                                <input ng-model="weight" placeholder="in kg" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Gender :
+                            </td>
+                            <td>
+                                <select ng-model="gender">
+                                    <option value="F">Female</option>
+                                    <option value="M">Male</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dream Weight :
+                            </td>
+                            <td>
+                                <input class="sideInput" ng-model="dWeight" placeholder="in kg" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Age :
+                            </td>
+                            <td>
+                                <input class="sideInput" ng-model="age" placeholder="Age" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Exercise Frequency :
+                            </td>
+                            <td>
+                                <select ng-model="frequency">
+                                    <option value="1">Hardly Exercise</option>
+                                    <option value="2">Exercise 1 to 2 times a week </option>
+                                    <option value="3">Exercise 3 to 5 times a week </option>
+                                    <option value="4">Exercise 6 to 7 times a week  </option>
+                                    <option value="5">More than 7 times a week  </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" height="40%">
+                                <button class="sideButton" ng-click="calculate()"> Calculate </button>
+                            </td>
+                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr valign="bottom"  height="10%">
+                <td>
+                    <table>
+                        <tr>
+                            <td><button ng-click="goTo('profile')">Profile</button></td>
+                            <td><button ng-click="goTo('appointment')">Appointment</button></td>
+                            <td><button ng-click="goTo('bmichecker')">BMI Checker</button></td>
+                            <td><button ng-click="goTo('hiitplanner')">HIIT Planner</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+
+
+
+
+</body>
+</html>
