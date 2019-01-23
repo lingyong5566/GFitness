@@ -12,21 +12,60 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>BlankCordovaApp1</title>
+    <title>Glow Fitness</title>
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/jquery.validate.min.js"></script>
+    <script src="lib/angular.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
-</head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
 
-        <
-        
-    </body>
+</head>
+<body>
+    <div  ng-app="myApp" ng-controller="fitnessCtrl" class="container">
+        <table class="mainTable">
+            <tr class="logoRow">
+                <td align="center">
+                    <img src="images/mainLogo.jpg"  height="200" width="300">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table class="sideTable">
+                        <tr>
+                            <td align="center" >
+                                <input class="mainInput" ng-model="userId" placeholder="Username"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <input class="mainInput" ng-model="userId" placeholder="Password"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" >
+                                <button class="mainButton" ng-click="login()">Login</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" >
+                                <button class="mainButton" ng-click="signUp()">Sign Up</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+
+
+
+
+</body>
 </html>
