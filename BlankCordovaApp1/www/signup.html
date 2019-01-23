@@ -12,18 +12,18 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>Glow Fitness</title>
+    <title>Glow Fitness Signup</title>
     <script src="lib/jquery-1.11.2.min.js"></script>
     <script src="lib/jquery.validate.min.js"></script>
     <script src="lib/angular.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/common.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/signup.js"></script>
 
 </head>
 <body>
-    <div  ng-app="myApp" ng-controller="fitnessCtrl" class="container">
+    <div ng-app="myApp" ng-controller="fitnessCtrl" class="container">
         <table class="mainTable">
             <tr class="logoRow">
                 <td align="center">
@@ -34,23 +34,28 @@
                 <td align="center">
                     <table class="sideTable">
                         <tr>
-                            <td align="center" >
-                                <input class="mainInput" ng-model="userid" placeholder="Username"/>
+                            <td align="center">
+                                <input class="mainInput" ng-model="userid" placeholder="Username" />
                             </td>
                         </tr>
                         <tr>
                             <td align="center">
-                                <input class="mainInput" ng-model="password" placeholder="Password"/>
+                                <input class="mainInput" ng-model="password" placeholder="Password" />
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" >
-                                <button class="mainButton" ng-click="login()">Login</button>
+                            <td align="center">
+                                <input class="mainInput" ng-model="email" placeholder="Email" />
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" >
-                                <button class="mainButton" ng-click="signUp()">Sign Up</button>
+                            <td align="center">
+                                <input class="mainInput" ng-model="description" placeholder="Description" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <button class="mainButton" ng-click="register()">Register</button>
                             </td>
                         </tr>
                     </table>

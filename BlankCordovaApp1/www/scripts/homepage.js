@@ -1,21 +1,27 @@
 ﻿var app = angular.module('myApp', []);
 app.controller('fitnessCtrl', function ($scope, $http) {
+
     $scope.login = function () {
         console.log("Login called.");
+
+        var resetInput = function () {
+            $scope.userid = "";
+            $scope.password = "";
+            $scope.$apply();
+        }
 
         var callback = function (arr) {
             console.log("We received feedback");
             console.log(arr);
             if (arr[0].result == "0") {
-                $scope.userid = "";
-                $scope.password = "";
-                $scope.$apply();
+                resetInput();
                 alert("Wrong password");
                 
             }
             else {
+                localStorage.setItem("userid", userid);
                 alert("Login successfully");
-                window.location = "homepage.html";
+                //window.location = "homepage.html";
             }
             
         }
@@ -31,5 +37,9 @@ app.controller('fitnessCtrl', function ($scope, $http) {
     $scope.signUp =  function () {
         console.log("Sign up called.");
         window.location = "signup.html";
+    }
+
+    $scope.goTo = function (location) {
+        window.location = location + ".html";
     }
 });
