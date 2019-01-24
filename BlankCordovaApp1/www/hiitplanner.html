@@ -19,18 +19,172 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/common.js"></script>
+<<<<<<< HEAD
+    <script type="text/javascript" src="scripts/hiitplanner.js"></script>
+=======
     <script type="text/javascript" src="scripts/profile.js"></script>
+>>>>>>> 5dbb39ea81973c49c2d01ed6ce237a41e41f6bdf
 
 </head>
 <body>
     <div ng-app="myApp" ng-controller="fitnessCtrl" class="container">
         <table class="mainTable">
+<<<<<<< HEAD
+            <tr align="center" height="15%" ng-show="checker">
+                <td>
+                    <div>
+                        <label class="underlineLabel">HIIT Planner</label>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-show="checker">
+                <td>
+                    <table class="mainTable">
+                        <tr>
+                            <td colspan="2">
+                                Exercise Time :
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input ng-model="exerciseTime" placeholder="in minutes" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Repetition :
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input ng-model="repetition" placeholder="in whole numbers" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Work to rest Ratio :
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input ng-model="work" placeholder="work" />
+                            </td>
+                            <td>
+                                <input ng-model="rest" placeholder="rest" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Exercise Frequency :
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select ng-model="exercise">
+                                    <option value="0">Standing Mountain Climbers</option>
+                                    <option value="1">Push Ups </option>
+                                    <option value="2">Speed Squats </option>
+                                    <option value="3">Plank</option>
+                                </select>
+                            </td>
+</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" height="40%">
+                                <button class="sideButton" ng-click="plan()"> Calculate </button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr align="center" height="15%" ng-show="!checker">
+                <td>
+                    <div>
+                        <label class="underlineLabel">Result</label>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-show="!checker">
+                <td>
+                    <table class="mainTable">
+                        <tr>
+                            <td col-span="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td align="center">
+                                            Rep
+                                        </td>
+                                        <td align="center">
+                                            Work
+                                        </td>
+                                        <td align="center">
+                                            Rest
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="item in reps">
+                                        <td align="center">
+                                            {{ item.rep }}
+                                        </td>
+                                        <td align="center">
+                                            {{ item.work}} Seconds
+                                        </td>
+                                        <td align="center">
+                                            {{ item.rest }} Seconds
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" height="100%">
+                                    <tr>
+                                        <td>
+                                            Total Exercise Time :
+                                        </td>
+                                        <td>
+                                            <label>{{ totalWorkTime }} Minutes</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Total Rest Time :
+                                        </td>
+                                        <td>
+                                            <label>{{ totalRestTime }} Minutes </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Total HIIT Time :
+                                        </td>
+                                        <td>
+                                            <label>{{ totalHIITTime }} Minutes</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center" height="70%">
+                                            <button class="sideButton" ng-click="back()"> Back </button>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr valign="bottom" height="10%">
+=======
             <tr>
                 <td>
 
                 </td>
             </tr>
             <tr valign="bottom">
+>>>>>>> 5dbb39ea81973c49c2d01ed6ce237a41e41f6bdf
                 <td>
                     <table>
                         <tr>
