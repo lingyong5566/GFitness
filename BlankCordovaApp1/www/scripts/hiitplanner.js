@@ -18,6 +18,28 @@ app.controller('fitnessCtrl', function ($scope, $http) {
         var restTime = parseInt(repInSeconds / totalRatio * $scope.rest);
         return [workTime, restTime];
     }
+
+    $scope.loadFromCloud = function () {
+        var data = {
+            "userid": localStorage.getItem('userid')
+        };
+        var callback = function (arr) {
+            console.log(arr);
+            $scope.data = arr;
+        }
+        doAJAXCall("/loadFromCloud.php", data, callback, callback);
+    }
+
+    $scope.saveToCloud = function () {
+        var data = {
+            "userid": localStorage.getItem('userid'),
+        };
+        var callback = function (arr) {
+            console.log(arr);
+            $scope.data = arr;
+        }
+        doAJAXCall("/loadFromCloud.php", data, callback, callback);
+    }
     
     $scope.plan = function () {
         var workRestTotalTime = workRestTime();

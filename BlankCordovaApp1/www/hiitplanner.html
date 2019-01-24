@@ -39,7 +39,7 @@
                             <td colspan="2">
                                 Exercise Time :
                             </td>
-                            
+
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -73,7 +73,7 @@
                             <td>
                                 Exercise Frequency :
                             </td>
-                            
+
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -84,14 +84,22 @@
                                     <option value="3">Plank</option>
                                 </select>
                             </td>
-</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center" height="40%">
-                                <button class="sideButton" ng-click="plan()"> Calculate </button>
-                            </td>
-                        </tr>
-                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" height="40%">
+                    <button class="sideButton" ng-click="plan()"> Calculate </button>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" height="10%">
+                    <button ng-click="loadFromCloud()"> Load from Cloud </button>
+                </td>
+                <td align="center" height="10%">
+                    <button ng-click="saveToCloud()"> Save to Cloud </button>
+                </td>
+            </tr>
+        </table>
                 </td>
             </tr>
             <tr align="center" height="15%" ng-show="!checker">
