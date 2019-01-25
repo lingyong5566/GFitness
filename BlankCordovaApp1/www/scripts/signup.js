@@ -10,7 +10,10 @@ app.controller('fitnessCtrl', function ($scope, $http) {
             "userid": $scope.userid,
             "password": $scope.password,
             "email": $scope.email,
-            "description": $scope.description
+            "description": $scope.description,
+            "weight": $scope.weight,
+            "height": $scope.height,
+            "age" : $scope.age
         };
         $.ajax({
             url: url,

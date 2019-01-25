@@ -15,6 +15,7 @@ app.controller('fitnessCtrl', function ($scope, $http) {
             }
             else {
                 alert("Login successfully");
+                localStorage.setItem("userid", $scope.userid);
                 window.location = "homepage.html";
             }
             

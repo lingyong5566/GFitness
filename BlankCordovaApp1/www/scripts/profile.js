@@ -1,43 +1,28 @@
 ﻿var app = angular.module('myApp', []);
 app.controller('fitnessCtrl', function ($scope, $http) {
 
-    $scope.login = function () {
-        console.log("Login called.");
-
-        var resetInput = function () {
-            $scope.userid = "";
-            $scope.password = "";
-            $scope.$apply();
-        }
-
+    $scope.init = function () {
+        console.log("Init called");
         var callback = function (arr) {
-            console.log("We received feedback");
             console.log(arr);
-            if (arr[0].result == "0") {
-                resetInput();
-                alert("Wrong password");
-                
+            $scope.data = arr;
+            if ($scope.data[0] != undefined) {
+                $scope.weight = $scope.data[0].weight;
+                $scope.height = $scope.data[0].height;
+                $scope.age = $scope.data[0].age;
+                $scope.name = $scope.data[0].userid;
+
+                $scope.$apply();
             }
-            else {
-                localStorage.setItem("userid", userid);
-                alert("Login successfully");
-                //window.location = "homepage.html";
-            }
-            
         }
-        var phpToRetrieve = "/login.php";
+        var phpToRetrieve = "/getProfile.php";
 
         var data = {
-            "userid": $scope.userid,
-            "password": $scope.password
+            "userid": localStorage.getItem("userid")
         }
         doAJAXCall(phpToRetrieve, data, callback, callback);
     }
-
-    $scope.signUp =  function () {
-        console.log("Sign up called.");
-        window.location = "signup.html";
-    }
+    
 
     $scope.goTo = function (location) {
         window.location = location + ".html";
