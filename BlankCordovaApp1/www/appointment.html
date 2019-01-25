@@ -5,7 +5,7 @@
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no">
@@ -19,13 +19,13 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/common.js"></script>
-    <script type="text/javascript" src="scripts/bmichecker.js"></script>
+    <script type="text/javascript" src="scripts/appointment.js"></script>
 
 </head>
 <body>
-    <div ng-app="myApp" ng-controller="fitnessCtrl" class="container">
+    <div ng-app="myApp" ng-controller="fitnessCtrl" class="container" ng-init="init()">
         <table class="mainTable">
-            <tr align="center" height="15%" ng-show="checker">
+            <tr align="center" height="15%">
                 <td>
                     <div>
                         <label class="underlineLabel">Schedule Appointment</label>
@@ -38,12 +38,12 @@
                         <tr>
 
                             <td width="90%">
-                                <input type="date" ng-model="date">
+                                <input type="date" name="txtDate" id="txtDate" ng-model="date">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="time" ng-model="time">
+                                <input type="time" name="txtTime" id="txtTime"  ng-model="time">
                             </td>
                         </tr>
                         <tr>
