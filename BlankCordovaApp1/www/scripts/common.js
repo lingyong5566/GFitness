@@ -25,3 +25,11 @@ function doAJAXCall(partialLink, dataToSend, callback, callbackFailed) {
     });
 
 }
+
+function isWholeNumber(value) {
+    if (value % 1 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

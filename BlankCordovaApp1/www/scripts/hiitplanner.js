@@ -40,13 +40,7 @@ app.controller('fitnessCtrl', function ($scope, $http) {
         doAJAXCall("/loadFromCloud.php", data, callback, callback);
     }
 
-    function isWholeNumber(value) {
-        if (value % 1 === 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    
     
 
     var checkInputCorrectness = function () {
