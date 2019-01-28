@@ -10,7 +10,7 @@ app.controller('fitnessCtrl', function ($scope, $http) {
                 $scope.userid = "";
                 $scope.password = "";
                 $scope.$apply();
-                alert("Wrong password");
+                alert("Error in username or password");
                 
             }
             else {
@@ -27,6 +27,15 @@ app.controller('fitnessCtrl', function ($scope, $http) {
             "password": $scope.password
         }
         doAJAXCall(phpToRetrieve, data, callback, callback);
+    }
+
+    var checkCorrectness = function () {
+        if ($scope.userid == "") {
+            alert("Username is empty.")
+        }
+        if ($scope.password == "") {
+            alert("Password is empty.")
+        }
     }
 
     $scope.signUp =  function () {

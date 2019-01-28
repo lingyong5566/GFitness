@@ -109,6 +109,8 @@ app.controller('fitnessCtrl', function ($scope, $http) {
             for (var x = 0; x < $scope.repetition; x++) {
                 $scope.reps.push({ "rep": x + 1, "work": parseInt(workRestTotalTime[0]), "rest": parseInt(workRestTotalTime[1]) });
             }
+            var exercises = ["Standing Mountain Climbers", "Push Ups", "Speed Squats", "Plank"];
+            $scope.strExercise = exercises[$scope.exercise]
             console.log($scope.reps);
             $scope.checker = false;
         }

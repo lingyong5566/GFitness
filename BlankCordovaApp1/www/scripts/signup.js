@@ -2,10 +2,6 @@
 app.controller('fitnessCtrl', function ($scope, $http) {
 
     var checkInputCorrectness = function () {
-        if (!isWholeNumber($scope.height)) {
-            alert("Height is not whole number");
-            return false;
-        }
         if (!isWholeNumber($scope.age)) {
             alert("Age is not whole number");
             return false;
@@ -16,7 +12,6 @@ app.controller('fitnessCtrl', function ($scope, $http) {
         console.log("Register called.");
 
         var url = serverURL() + "/user_register.php";
-
         var data = {
             "userid": $scope.userid,
             "password": $scope.password,
@@ -26,26 +21,34 @@ app.controller('fitnessCtrl', function ($scope, $http) {
             "height": $scope.height,
             "age" : $scope.age
         };
+        var callback = function ( arr ) {
+            if (arr[0].result == "0") {
 
-        if (checkInputCorrectness()) {
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        data: data,
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        success: function (arr) {
+                            window.location = "index.html";
+                            alert("Successfully registered. Please continue");
+                        },
+                        error: function () {
+                            window.location = "index.html";
+                            return;
+                        }
+                    });
 
-            $.ajax({
-                url: url,
-                type: 'GET',
-                data: data,
-                dataType: 'json',
-                contentType: "application/json; charset=utf-8",
-                success: function (arr) {
-                    window.location = "index.html";
-                    alert("Successfully registered. Please continue");
-                },
-                error: function () {
-                    window.location = "index.html";
-                    return;
-                }
-            });
-
+                
+            }
+            else {
+                alert("There is a user with same userid. Please choose another userid");
+            }
         }
+        if (checkInputCorrectness())
+            doAJAXCall("/checkUser.php", data , callback , callback);
+        
         
     }
 });
