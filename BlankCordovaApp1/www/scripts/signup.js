@@ -31,12 +31,12 @@ app.controller('fitnessCtrl', function ($scope, $http) {
                         dataType: 'json',
                         contentType: "application/json; charset=utf-8",
                         success: function (arr) {
-                            window.location = "index.html";
+                            //window.location = "index.html";
                             alert("Successfully registered. Please continue");
                         },
                         error: function () {
-                            window.location = "index.html";
-                            return;
+                            //window.location = "index.html";
+                            //return;
                         }
                     });
 
