@@ -32,10 +32,20 @@ app.controller('fitnessCtrl', function ($scope, $http) {
                         contentType: "application/json; charset=utf-8",
                         success: function (arr) {
                             //window.location = "index.html";
-                            alert("Successfully registered. Please continue");
+
+                            if (confirm("Successfully registered. Please continue")) {
+                                window.location = "index.html";
+                            } else {
+                                txt = "You pressed Cancel!";
+                            }
                         },
                         error: function (arr) {
-                            alert("Successfully registered. Please continue");
+
+                            if (confirm("Successfully registered. Please continue")) {
+                                window.location = "index.html";
+                            } else {
+                                txt = "You pressed Cancel!";
+                            }
                             //window.location = "index.html";
                             //return;
                         }
