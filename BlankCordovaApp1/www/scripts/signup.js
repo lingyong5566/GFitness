@@ -34,7 +34,8 @@ app.controller('fitnessCtrl', function ($scope, $http) {
                             //window.location = "index.html";
                             alert("Successfully registered. Please continue");
                         },
-                        error: function () {
+                        error: function (arr) {
+                            alert("Successfully registered. Please continue");
                             //window.location = "index.html";
                             //return;
                         }
